@@ -9,4 +9,8 @@ public enum SituacaoEmprestimo {
     public boolean estaAberto() {
         return this == ABERTO;
     }
+
+    public boolean estaFechado() {
+        return this == FECHADO;
+    }
 }
