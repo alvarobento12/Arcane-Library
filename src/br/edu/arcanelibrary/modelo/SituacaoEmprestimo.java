@@ -10,7 +10,7 @@ public enum SituacaoEmprestimo {
         return this == ABERTO;
     }
 
-    public boolean estaFechado() {
-        return this == FECHADO;
+    public boolean estaFinalizado() {
+        return this == FINALIZADO;
     }
 }
