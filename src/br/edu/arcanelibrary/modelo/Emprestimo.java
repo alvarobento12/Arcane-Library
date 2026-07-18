@@ -32,10 +32,4 @@ public class Emprestimo {
     public Leitor getLeitor() {
         return leitor;
     }
-    public void adicionarMaterial(Material material) {
-        material.
-        if(situacao == DISPONIVEL) {
-
-        }
-    }
 }
