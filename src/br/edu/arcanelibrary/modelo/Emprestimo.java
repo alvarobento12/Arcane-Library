@@ -1,6 +1,7 @@
 package br.edu.arcanelibrary.modelo;
 import java.util.ArrayList;
 import java.time.LocalDate;
+import static br.edu.arcanelibrary.modelo.SituacaoMaterial.DISPONIVEL;
 
 public class Emprestimo {
     private static int proximoNumero = 1;
@@ -30,5 +31,11 @@ public class Emprestimo {
 
     public Leitor getLeitor() {
         return leitor;
+    }
+    public void adicionarMaterial(Material material) {
+        material.
+        if(situacao == DISPONIVEL) {
+
+        }
     }
 }

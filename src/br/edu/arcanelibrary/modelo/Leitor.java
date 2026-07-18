@@ -4,7 +4,7 @@ public abstract class Leitor {
     private String nome, email;
     private int CPF, saldoPontos;
 
-    public Leitor(String nome, int CPF, String email, int saldoPontos) {
+    public Leitor(String nome, String CPF, String email, int saldoPontos) {
         this.nome = nome;
         this.CPF = CPF;
         this.email = email;
@@ -19,7 +19,7 @@ public abstract class Leitor {
         return email;
     }
 
-    public int getCPF() {
+    public String getCPF() {
         return CPF;
     }
 
@@ -27,5 +27,9 @@ public abstract class Leitor {
         return saldoPontos;
     }
 
+    protected void adicionarPontos(int pontos) {
+        saldoPontos += pontos;
+    }
 
+    public abstract void calcularPontosDeLeitura();
 }
