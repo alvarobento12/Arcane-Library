@@ -3,7 +3,8 @@ package br.edu.arcanelibrary.modelo;
 public enum SituacaoEmprestimo {
 
     ABERTO,
-    FINALIZADO;
+    FINALIZADO,
+    ATRASADO;
 
 
     public boolean estaAberto() {
@@ -11,4 +12,6 @@ public enum SituacaoEmprestimo {
     }
 
     public boolean estaFinalizado() { return this == FINALIZADO; }
+
+    public boolean estaAtrasado() {return this == ATRASADO; }
 }
