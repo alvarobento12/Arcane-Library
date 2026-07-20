@@ -8,6 +8,7 @@ public class LeitorPremium extends Leitor {
     }
 
     public void calcularPontosDeLeitura() {
+
         adicionarPontos(PONTOS_LEITURA);
     }
 }

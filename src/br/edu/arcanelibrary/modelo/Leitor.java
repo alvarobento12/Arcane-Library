@@ -1,8 +1,8 @@
 package br.edu.arcanelibrary.modelo;
 
 public abstract class Leitor {
-    private String nome, email;
-    private int CPF, saldoPontos;
+    private String nome, email, CPF;
+    private int saldoPontos;
 
     public Leitor(String nome, String CPF, String email, int saldoPontos) {
         this.nome = nome;

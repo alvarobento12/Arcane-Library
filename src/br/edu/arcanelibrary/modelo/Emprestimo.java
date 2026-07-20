@@ -1,11 +1,9 @@
 package br.edu.arcanelibrary.modelo;
 import br.edu.arcanelibrary.servico.CalculadoraMulta;
-import br.edu.arcanelibrary.servico.CalculadoraMultaPadrao;
 
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.time.LocalDate;
-import static br.edu.arcanelibrary.modelo.SituacaoMaterial.DISPONIVEL;
 
 public class Emprestimo {
     private static int proximoNumero = 1;
@@ -69,6 +67,29 @@ public class Emprestimo {
             long diasDeAtraso = calcularDiasAtraso();
             valorMulta = calculadoraMulta.calcularMulta(diasDeAtraso);
         }
+        else {
+            leitor.calcularPontosDeLeitura();
+        }
         situacao = SituacaoEmprestimo.FINALIZADO;
     }
+
+    public double getValorMulta() {return valorMulta; }
+
+    public Material consultarItemEmprestimo(int codigo) {
+        for(ItemEmprestimo item : itens) {
+            if(codigo == item.getMaterial().getCodigo()) {
+                return item.getMaterial();
+            }
+        }
+        return null;
+    }
+
+    public void consultarItensEmprestimo() {
+        for(ItemEmprestimo item : itens) {
+            System.out.println(item.getMaterial());
+        }
+    }
+// lembrar de sobrescrever o ToString()
+
 }
+
