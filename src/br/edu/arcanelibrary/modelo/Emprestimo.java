@@ -1,5 +1,9 @@
 package br.edu.arcanelibrary.modelo;
+import br.edu.arcanelibrary.excecao.PagamentoPremiumException;
+import br.edu.arcanelibrary.excecao.PontosInsuficientesException;
 import br.edu.arcanelibrary.servico.CalculadoraMulta;
+import br.edu.arcanelibrary.excecao.MaterialIndisponivelException;
+import br.edu.arcanelibrary.modelo.LeitorPremium;
 
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
@@ -42,10 +46,23 @@ public class Emprestimo {
         return leitor;
     }
 
-    public void adicionarMaterial(Material material) {
+    public void adicionarMaterial (Material material) throws MaterialIndisponivelException {
         material.emprestarExemplar();
         ItemEmprestimo item = new ItemEmprestimo(material);
         itens.add(item);
+    }
+
+    public void aumentarEmprestimoComPontos(int diasDesejados) throws PontosInsuficientesException,
+            PagamentoPremiumException {
+
+        if(!(leitor instanceof LeitorPremium)) {
+            throw new PagamentoPremiumException("Opção de pagamento disponível somente para leitores premium. ");
+        }
+
+        LeitorPremium leitorPremium = (LeitorPremium) leitor;
+        leitorPremium.pagarComPontos(diasDesejados);
+
+        dataPrevistaDevolucao = dataPrevistaDevolucao.plusDays(diasDesejados);
     }
 
     public boolean estaAtrasado() {

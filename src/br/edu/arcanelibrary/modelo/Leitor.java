@@ -27,6 +27,8 @@ public abstract class Leitor {
         return saldoPontos;
     }
 
+    public void setSaldoPontos(int saldoPontos) {this.saldoPontos = saldoPontos; }
+
     protected void adicionarPontos(int pontos) {
         saldoPontos += pontos;
     }

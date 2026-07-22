@@ -1,5 +1,7 @@
 package br.edu.arcanelibrary.modelo;
 
+import br.edu.arcanelibrary.excecao.MaterialIndisponivelException;
+
 import static br.edu.arcanelibrary.modelo.SituacaoMaterial.INDISPONIVEL;
 
 public class Material {
@@ -39,10 +41,13 @@ public class Material {
 
     public void setTitulo(String titulo) {this.titulo = titulo; }
 
-    public void emprestarExemplar() {
-        if (quantDisponivel > 0) {
-            quantDisponivel --;
+    public void emprestarExemplar() throws MaterialIndisponivelException {
+        if (quantDisponivel == 0) {
+            throw new MaterialIndisponivelException(
+                    "Material Indisponível para Empréstimo, quantidade zerada em estoque.");
         }
+
+        quantDisponivel --;
 
         if(quantDisponivel == 0) {
             situacao = SituacaoMaterial.INDISPONIVEL;
