@@ -4,7 +4,7 @@ public class Mangas extends Material {
     private String serie, editora;
     private int volume;
 
-    public Mangas(String titulo, int codigo, int anoPublicacao, int quantDisponivel, String situacao, float valorReposicao,
+    public Mangas(String titulo, int codigo, int anoPublicacao, int quantDisponivel, SituacaoMaterial situacao, float valorReposicao,
                   String serie, String editora, int volume) {
         super(titulo, codigo, anoPublicacao, quantDisponivel, situacao, valorReposicao);
         this.serie = serie;
