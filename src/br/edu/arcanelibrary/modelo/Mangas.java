@@ -23,4 +23,10 @@ public class Mangas extends Material {
     public int getVolume() {
         return volume;
     }
+
+    @Override
+    public String toString() {
+        return super.toString() + String.format(" | Série: %s, Editora: %s, Vol. %d",
+                serie, editora, volume);
+    }
 }

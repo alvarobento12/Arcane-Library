@@ -12,7 +12,7 @@ public class GerenciadorLeitor {
 
     public Leitor buscarLeitor(String CPF) {
         for(Leitor leitor : leitores) {
-            if(CPF == leitor.getCPF()) {
+            if(CPF.equals(leitor.getCPF())) {
                 return leitor;
             }
         }

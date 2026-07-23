@@ -34,4 +34,10 @@ public abstract class Leitor {
     }
 
     public abstract void calcularPontosDeLeitura();
+
+    @Override
+    public String toString() {
+        return String.format("%s : %s (CPF: %s) - %d pontos",
+                getClass().getSimpleName(), nome, CPF, saldoPontos);
+    }
 }

@@ -30,4 +30,8 @@ public class GerenciadorEmprestimo {
         }
 
    }
+
+    public void adicinoar() {
+
+    }
 }

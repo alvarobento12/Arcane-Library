@@ -55,11 +55,16 @@ public class Material {
     }
 
     public void devolverExemplar() {
-        quantDisponivel ++;
-
         if(quantDisponivel == 0) {
             situacao = SituacaoMaterial.DISPONIVEL;
         }
+        quantDisponivel ++;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("[%d] %s (%d) - %s - %d disponível(is)",
+                codigo, titulo, anoPublicacao, situacao, quantDisponivel);
     }
 
 }
